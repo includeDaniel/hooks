@@ -13,6 +13,8 @@ const UseEffect = (props) => {
   const [number, setNumber] = useState(1);
   const [fatorial, setFatorial] = useState(1);
 
+  //ex #01
+
   useEffect(
     function () {
       setFatorial(calcFatorial(number));
@@ -20,13 +22,15 @@ const UseEffect = (props) => {
     [number]
   );
 
+  //ex #01
+
+  const [status, setStatus] = useState("Ímpar");
+
   useEffect(
     function () {
-      if (fatorial > 1000000) {
-        alert("Fatorial acima de 1000000");
-      }
+      setStatus(number % 2 === 0 ? "Par" : "Ímpar");
     },
-    [fatorial]
+    [number]
   );
 
   return (
@@ -38,10 +42,12 @@ const UseEffect = (props) => {
       <SectionTitle title="Exercício #01" />
       <div>
         <div className="center">
-          <span className="text">Fatorial :</span>
-          <span className="text red">
-            {fatorial === -1 ? "Não existe" : fatorial}
-          </span>
+          <div>
+            <span className="text">Fatorial : </span>
+            <span className="text red">
+              {fatorial === -1 ? "Não existe" : fatorial}
+            </span>
+          </div>
           <input
             type="number"
             className="input"
@@ -51,7 +57,13 @@ const UseEffect = (props) => {
         </div>
       </div>
       <SectionTitle title="Exercício #02" />
-      <div className="center"></div>
+
+      <div className="center">
+        <div>
+          <span className="text">Status: </span>
+          <span className="text red">{status}</span>
+        </div>
+      </div>
     </div>
   );
 };
