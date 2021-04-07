@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import PageTitle from "../../components/layout/PageTitle";
 import SectionTitle from "../../components/layout/SectionTitle";
 import DataContext from "../../data/DataContext";
@@ -14,16 +14,7 @@ const UseContext = (props) => {
     });
   };
 
-  const { number, text, setText, setNumber } = useContext(AppContext);
-
-  useEffect(
-    function () {
-      if (number > 1250) {
-        setText("Passou de 1250");
-      }
-    },
-    [number]
-  );
+  const { number, text, setNumber } = useContext(AppContext);
 
   return (
     <div className="UseContext">
