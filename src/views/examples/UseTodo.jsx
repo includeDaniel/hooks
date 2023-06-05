@@ -5,7 +5,6 @@ import { useTodo } from "../../hooks/useTodo";
 
 const UseRef = (props) => {
   const {items, action} = useTodo() 
-  console.log(items)
 
   return (
     <div className="UseCustom">
