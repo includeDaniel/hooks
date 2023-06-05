@@ -4,7 +4,7 @@ import SectionTitle from "../../components/layout/SectionTitle";
 import { useTodo } from "../../hooks/useTodo";
 
 const UseRef = (props) => {
-  const {items, append, remove, edit, filter, clearStatus} = useTodo()
+  const {items, append, remove, edit, filter, clearContent, toggleContent} = useTodo()
   console.log(items)
 
   return (
@@ -20,7 +20,8 @@ const UseRef = (props) => {
             <button onClick={() => remove(0)}>Remove</button>
             <button onClick={() => edit(1, 11)}>Edit</button>
             <button onClick={() => filter(11)}>Filter</button>
-            <button onClick={() => clearStatus(10)}>ClearStatus</button>
+            <button onClick={() => clearContent(10)}>ClearContent</button>
+            <button onClick={() => toggleContent(11, 10, 2)}>ToggleContent</button>
         </div>
       </div>
     </div>

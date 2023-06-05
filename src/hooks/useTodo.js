@@ -12,16 +12,16 @@ export const useTodo = () => {
     const edit = (id, content) => {
         setItems(items.map((m, i) => (i === id ? content : m)));
     };
-    // const toggleStatus = (status) => {
-    //     setItems(items.map())
-    // }
-    const filter = (status) => {
-        const i = items.filter((f) => f === status);
+    const toggleContent = (c1, c2, id) => {
+        setItems(items.map((m, i) => (i === id ? (c1 === m ? c2 : c1) : m)));
+    };
+    const filter = (content) => {
+        const i = items.filter((f) => f === content);
         console.log(i);
     };
-    const clearStatus = (status) => {
-        setItems(items.filter((f) => f !== status));
+    const clearContent = (content) => {
+        setItems(items.filter((f) => f !== content));
     };
 
-    return { items, append, remove, edit, filter, clearStatus };
+    return { items, append, remove, edit, filter, clearContent, toggleContent };
 };
