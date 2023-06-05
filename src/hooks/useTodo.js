@@ -16,12 +16,14 @@ export const useTodo = () => {
         setItems(items.map((m, i) => (i === id ? (c1 === m ? c2 : c1) : m)));
     };
     const filter = (content) => {
-        const i = items.filter((f) => f === content);
-        console.log(i);
+        items.filter((f) => f === content);
     };
     const clearContent = (content) => {
         setItems(items.filter((f) => f !== content));
     };
 
-    return { items, append, remove, edit, filter, clearContent, toggleContent };
+    return {
+        items,
+        action: { append, remove, edit, filter, clearContent, toggleContent },
+    };
 };
